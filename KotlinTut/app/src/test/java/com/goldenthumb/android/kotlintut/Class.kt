@@ -7,8 +7,7 @@ class Class {
 
     @Test
     fun testChessGame() {
-        val chessGame = ChessGame()
-        print(chessGame.showBoard())
+        print(ChessGame.showBoard())
     }
 
     @Test

@@ -1,6 +1,6 @@
 package com.goldenthumb.android.kotlintut
 
-class ChessGame {
+object ChessGame {
 
     fun showBoard(): String {
         var board = ""
