@@ -3,7 +3,7 @@ package com.goldenthumb.android.kotlintut
 import org.junit.Test
 import org.junit.Assert.*
 
-class Class {
+class KotlinClass {
 
     @Test
     fun testChessGame() {
