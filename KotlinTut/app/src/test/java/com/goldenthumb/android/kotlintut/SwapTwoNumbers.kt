@@ -13,9 +13,6 @@ class SwapTwoNumbers {
         assertEquals(5, b)
 
         // here is our swapping code
-        a += b
-        b = a - b
-        a -= b
 
         assertEquals(5, a)
         assertEquals(3, b)
