@@ -10,6 +10,12 @@ class KotlinClass {
         print(ChessGame.showBoard())
     }
 
+    private class Game {
+        fun showGame() {
+            print("here is the game ...")
+        }
+    }
+
     @Test
     fun playWithClass() {
         val gameA = Game()
@@ -19,11 +25,5 @@ class KotlinClass {
         assertFalse(gameA == gameB)
 
         gameA.showGame()
-    }
-}
-
-class Game {
-    fun showGame() {
-        print("here is the game ...")
     }
 }
