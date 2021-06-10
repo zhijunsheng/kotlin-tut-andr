@@ -25,8 +25,9 @@ object ChessGame {
     private fun pieceAt(row: Int, col: Int): ChessPiece? = pieces.find { it.row == row && it.col == col }
 
     override fun toString(): String {
-        var board = ""
+        var board = "  a b c d e f g h\n"
         for (row in 0..7) {
+            board += "${8 - row}"
             for (col in 0..7) {
                 val piece = pieceAt(row, col)
                 board += " "
@@ -40,8 +41,9 @@ object ChessGame {
                     Chessman.Pawn -> if (piece.player == ChessPlayer.Black) "P" else "p"
                 }
             }
-            board += "\n"
+            board += " ${8 - row}\n"
         }
+        board += "  a b c d e f g h"
         return board
     }
 
