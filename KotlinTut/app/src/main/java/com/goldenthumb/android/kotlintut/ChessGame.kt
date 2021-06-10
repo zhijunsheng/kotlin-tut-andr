@@ -6,6 +6,7 @@ object ChessGame {
     fun initBoard() {
         for (i in 0..1) {
             pieces.add(ChessPiece(0, 0 + 7 * i, Chessman.Rook, ChessPlayer.Black))
+            pieces.add(ChessPiece(7, 0 + 7 * i, Chessman.Rook, ChessPlayer.White))
             pieces.add(ChessPiece(0, 1 + 5 * i, Chessman.Knight, ChessPlayer.Black))
         }
 
@@ -18,10 +19,15 @@ object ChessGame {
         for (row in 0..7) {
             for (col in 0..7) {
                 val piece = pieceAt(row, col)
-                if (piece == null) {
-                    board += " ."
-                } else {
-                    board += " *"
+                board += " "
+                board += when (piece?.chessman) {
+                    null -> "."
+                    Chessman.King -> if (piece.player == ChessPlayer.Black) "K" else "k"
+                    Chessman.Queen -> if (piece.player == ChessPlayer.Black) "Q" else "q"
+                    Chessman.Rook -> if (piece.player == ChessPlayer.Black) "R" else "r"
+                    Chessman.Bishop -> if (piece.player == ChessPlayer.Black) "B" else "b"
+                    Chessman.Knight -> if (piece.player == ChessPlayer.Black) "N" else "n"
+                    Chessman.Pawn -> if (piece.player == ChessPlayer.Black) "P" else "p"
                 }
             }
             board += "\n"
