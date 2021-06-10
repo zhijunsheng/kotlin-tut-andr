@@ -1,7 +1,7 @@
 package com.goldenthumb.android.kotlintut
 
 object ChessGame {
-    val pieces = mutableSetOf<ChessPiece>()
+    private val pieces = mutableSetOf<ChessPiece>()
 
     fun initBoard() {
         for (i in 0..1) {
@@ -11,11 +11,25 @@ object ChessGame {
 
     }
 
+    private fun pieceAt(row: Int, col: Int): ChessPiece? {
+        for (piece in pieces) {
+            if (piece.row == row && piece.col == col) {
+                return piece
+            }
+        }
+        return null
+    }
+
     override fun toString(): String {
         var board = ""
-        for (i in 0..7) {
-            for (i in 0..7) {
-                board += " ."
+        for (row in 0..7) {
+            for (col in 0..7) {
+                val piece = pieceAt(row, col)
+                if (piece == null) {
+                    board += " ."
+                } else {
+                    board += " *"
+                }
             }
             board += "\n"
         }
