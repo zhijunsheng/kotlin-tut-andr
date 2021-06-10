@@ -15,7 +15,7 @@ class KotlinClass {
 
     @Test
     fun testChessGame() {
-        print(ChessGame.showBoard())
+        print(ChessGame)
     }
 
     private class Game {
