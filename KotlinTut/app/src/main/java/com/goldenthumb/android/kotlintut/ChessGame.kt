@@ -1,6 +1,7 @@
 package com.goldenthumb.android.kotlintut
 
 object ChessGame {
+    val pieces = setOf<ChessPiece>()
 
     fun showBoard(): String {
         var board = ""
