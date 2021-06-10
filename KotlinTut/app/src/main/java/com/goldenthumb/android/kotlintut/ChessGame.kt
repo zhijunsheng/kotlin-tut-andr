@@ -11,14 +11,7 @@ object ChessGame {
 
     }
 
-    private fun pieceAt(row: Int, col: Int): ChessPiece? {
-        for (piece in pieces) {
-            if (piece.row == row && piece.col == col) {
-                return piece
-            }
-        }
-        return null
-    }
+    private fun pieceAt(row: Int, col: Int): ChessPiece? = pieces.find { it.row == row && it.col == col }
 
     override fun toString(): String {
         var board = ""
