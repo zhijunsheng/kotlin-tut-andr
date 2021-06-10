@@ -8,8 +8,18 @@ object ChessGame {
             pieces.add(ChessPiece(0, 0 + 7 * i, Chessman.Rook, ChessPlayer.Black))
             pieces.add(ChessPiece(7, 0 + 7 * i, Chessman.Rook, ChessPlayer.White))
             pieces.add(ChessPiece(0, 1 + 5 * i, Chessman.Knight, ChessPlayer.Black))
+            pieces.add(ChessPiece(7, 1 + 5 * i, Chessman.Knight, ChessPlayer.White))
+            pieces.add(ChessPiece(0, 2 + 3 * i, Chessman.Bishop, ChessPlayer.Black))
+            pieces.add(ChessPiece(7, 2 + 3 * i, Chessman.Bishop, ChessPlayer.White))
         }
-
+        pieces.add(ChessPiece(0, 3, Chessman.Queen, ChessPlayer.Black))
+        pieces.add(ChessPiece(7, 3, Chessman.Queen, ChessPlayer.White))
+        pieces.add(ChessPiece(0, 4, Chessman.King, ChessPlayer.Black))
+        pieces.add(ChessPiece(7, 4, Chessman.King, ChessPlayer.White))
+        for (i in 0..7) {
+            pieces.add(ChessPiece(1, i, Chessman.Pawn, ChessPlayer.Black))
+            pieces.add(ChessPiece(6, i, Chessman.Pawn, ChessPlayer.White))
+        }
     }
 
     private fun pieceAt(row: Int, col: Int): ChessPiece? = pieces.find { it.row == row && it.col == col }
